@@ -42,7 +42,7 @@ export async function POST(req) {
       });
    } catch (error) {
       console.error("Database Error:", error);
-      return new Response(JSON.stringify({ error: "Something went wrong on the server" }), {
+      return new Response(JSON.stringify({ error }), {
          status: 500,
          headers: { "Content-Type": "application/json" },
       });
