@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+// import GradientSlider from '@/components/gradientSlider';
 
 export default function FeedbackForm() {
    const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -42,19 +43,39 @@ export default function FeedbackForm() {
 
             <div>
                <label className="block font-medium">Food Rating (1-5)</label>
-               <input type="number" {...register('foodRating', { required: true, min: 1, max: 5 })} className="w-full border p-2 rounded" />
+               {/* <GradientSlider {...register('overallRating', { required: true, min: 1, max: 5 })} /> */}
+               <div className='flex mt-2'>
+                  <input name='foodRating' type="radio" {...register('foodRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='foodRating' type="radio" {...register('foodRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='foodRating' type="radio" {...register('foodRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='foodRating' type="radio" {...register('foodRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='foodRating' type="radio" {...register('foodRating', { required: true })} className="w-full border p-2 rounded" />
+               </div>
                {errors.foodRating && <span className="text-red-500">Enter a rating between 1 and 5</span>}
             </div>
 
             <div>
                <label className="block font-medium">Arrangement Rating (1-5)</label>
-               <input type="number" {...register('arrangementRating', { required: true, min: 1, max: 5 })} className="w-full border p-2 rounded" />
+               {/* <GradientSlider {...register('overallRating', { required: true, min: 1, max: 5 })} /> */}
+               <div className='flex mt-2'>
+                  <input name='arrangementRating' type="radio" {...register('arrangementRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='arrangementRating' type="radio" {...register('arrangementRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='arrangementRating' type="radio" {...register('arrangementRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='arrangementRating' type="radio" {...register('arrangementRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='arrangementRating' type="radio" {...register('arrangementRating', { required: true })} className="w-full border p-2 rounded" />
+               </div>
                {errors.arrangementRating && <span className="text-red-500">Enter a rating between 1 and 5</span>}
             </div>
 
             <div>
                <label className="block font-medium">Overall Rating (1-5)</label>
-               <input type="number" {...register('overallRating', { required: true, min: 1, max: 5 })} className="w-full border p-2 rounded" />
+               <div className='flex mt-2'>
+                  <input name='overallRating' type="radio" {...register('overallRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='overallRating' type="radio" {...register('overallRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='overallRating' type="radio" {...register('overallRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='overallRating' type="radio" {...register('overallRating', { required: true })} className="w-full border p-2 rounded" />
+                  <input name='overallRating' type="radio" {...register('overallRating', { required: true })} className="w-full border p-2 rounded" />
+               </div>
                {errors.overallRating && <span className="text-red-500">Enter a rating between 1 and 5</span>}
             </div>
 
